@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FEF9D9; /* Off-White */
+  --foreground: #171717; /* Dark Text */
+  --accent1: #D2E0FB; /* Light Blue */
+  --accent2: #DEE5D4; /* Light Green */
+  --accent3: #8EACCD; /* Muted Blue */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* Dark Background */
+    --foreground: #e0e0e0; /* Light Text */
+    --accent1: #8EACCD; /* Muted Blue */
+    --accent2: #DEE5D4; /* Light Green */
+    --accent3: #D2E0FB; /* Light Blue */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
