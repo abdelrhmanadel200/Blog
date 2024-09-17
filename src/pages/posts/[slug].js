@@ -5,7 +5,6 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-
 import { useRouter } from 'next/router';
 import { markdownToHtml } from '../../lib/markdownToHtml';
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
@@ -16,7 +15,7 @@ const postsDirectory = path.join(process.cwd(), 'src/posts');
 // Fetch all post slugs for static paths
 export async function getStaticPaths() {
   const filenames = fs.readdirSync(postsDirectory);
-  const paths = filenames.map(filename => ({
+  const paths = filenames.map((filename) => ({
     params: {
       slug: filename.replace(/\.md$/, ''),
     },
@@ -79,17 +78,29 @@ const Post = ({ post, relatedPosts }) => {
         className="rounded-full mr-4"
       />
       <div>
-        <h3 className="text-lg font-semibold mb-2">About the Author</h3>
-        <p className="text-gray-700 mb-4">{author.bio}</p>
+        <h3 className="text-lg font-semibold mb-2 text-black">About the Author</h3>
+        <p className="text-black mb-4">{author.bio}</p>
         {author.social && (
           <div className="flex space-x-4">
             {author.social.twitter && (
-              <a href={author.social.twitter} className="text-blue-500 hover:text-blue-700" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <a
+                href={author.social.twitter}
+                className="text-blue-500 hover:text-blue-700"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
                 <FaTwitter size={20} />
               </a>
             )}
             {author.social.linkedin && (
-              <a href={author.social.linkedin} className="text-blue-700 hover:text-blue-900" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a
+                href={author.social.linkedin}
+                className="text-blue-700 hover:text-blue-900"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedinIn size={20} />
               </a>
             )}
@@ -102,10 +113,10 @@ const Post = ({ post, relatedPosts }) => {
   // Related Posts component
   const RelatedPosts = ({ posts }) => (
     <div className="mt-12">
-      <h3 className="text-lg font-semibold mb-4">Related Posts</h3>
+      <h3 className="text-lg font-semibold mb-4 text-black">Related Posts</h3>
       <ul className="space-y-4">
         {posts.length > 0 ? (
-          posts.map(post => (
+          posts.map((post) => (
             <li key={post.slug} className="flex items-center transition-transform transform hover:scale-105">
               <Image
                 src={post.image || '/images/default.jpg'}
@@ -174,17 +185,17 @@ const Post = ({ post, relatedPosts }) => {
         <link rel="canonical" href={`https://my-advanced-blog.com/posts/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": post.title,
-            "description": post.description,
-            "author": {
-              "@type": "Person",
-              "name": post.author,
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            'headline': post.title,
+            'description': post.description,
+            'author': {
+              '@type': 'Person',
+              'name': post.author,
             },
-            "datePublished": post.date,
-            "image": post.image,
-            "url": `https://my-advanced-blog.com/posts/${post.slug}`,
+            'datePublished': post.date,
+            'image': post.image,
+            'url': `https://my-advanced-blog.com/posts/${post.slug}`,
           })}
         </script>
       </Head>
@@ -192,8 +203,10 @@ const Post = ({ post, relatedPosts }) => {
       <div className="max-w-7xl mx-auto p-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
         <article className="lg:col-span-3 bg-white shadow-md rounded-lg p-6">
           <header className="mb-8">
-            <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-            <p className="text-gray-600 mb-4">{format(new Date(post.date), 'MMMM dd, yyyy')} by {post.author}</p>
+            <h1 className="text-3xl font-bold mb-4 text-black">{post.title}</h1>
+            <p className="text-black mb-4">
+              {format(new Date(post.date), 'MMMM dd, yyyy')} by {post.author}
+            </p>
             <Image
               src={post.image || '../../../public/images/imagg.png'}
               alt={post.title}
@@ -203,19 +216,21 @@ const Post = ({ post, relatedPosts }) => {
             />
           </header>
 
-          <div className="prose lg:prose-xl mb-8" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className="prose lg:prose-xl mb-8 text-black" dangerouslySetInnerHTML={{ __html: post.content }} />
 
           <div className="mt-8">
             <SocialSharing url={`https://my-advanced-blog.com/posts/${post.slug}`} title={post.title} />
           </div>
-
-          
         </article>
 
-
-
         <aside className="lg:col-span-1 space-y-12">
-          <AuthorBio author={{ name: post.author, bio: 'Author bio here', social: { twitter: 'https://twitter.com', linkedin: 'https://linkedin.com' } }} />
+          <AuthorBio
+            author={{
+              name: post.author,
+              bio: 'Author bio here',
+              social: { twitter: 'https://twitter.com', linkedin: 'https://linkedin.com' },
+            }}
+          />
           <RelatedPosts posts={relatedPosts} />
         </aside>
       </div>
