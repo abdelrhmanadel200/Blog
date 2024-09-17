@@ -89,18 +89,18 @@ const Navbar = () => {
               }`}
             >
               <li>
-                <Link href="/services/service1" passHref>
-                  <div className="block py-2 px-4 hover:bg-gray-700 cursor-pointer">Service 1</div>
+                <Link href="https://www.linkedin.com/in/abdelrhman-adel-b76431208?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" passHref>
+                  <div className="block py-2 px-4 hover:bg-gray-700 cursor-pointer">connect us</div>
                 </Link>
               </li>
               <li>
-                <Link href="/services/service2" passHref>
-                  <div className="block py-2 px-4 hover:bg-gray-700 cursor-pointer">Service 2</div>
+                <Link href="https://www.facebook.com/AbdelrhmanAdelMohame?mibextid=ZbWKwL" passHref>
+                  <div className="block py-2 px-4 hover:bg-gray-700 cursor-pointer">contact us</div>
                 </Link>
               </li>
               <li>
-                <Link href="/services/service3" passHref>
-                  <div className="block py-2 px-4 hover:bg-gray-700 cursor-pointer">Service 3</div>
+                <Link href="https://github.com/abdelrhmanadel200/Blog" passHref>
+                  <div className="block py-2 px-4 hover:bg-gray-700 cursor-pointer">explore repo</div>
                 </Link>
               </li>
             </ul>
