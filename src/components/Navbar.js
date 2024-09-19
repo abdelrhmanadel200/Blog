@@ -41,7 +41,7 @@ const Navbar = () => {
         {/* Move the Sign In button inside the mobile menu */}
         <Link href="/signin" className="flex items-center" onClick={handleLinkClick}>
           <span 
-            className="bg-[#FCE09B] text-black px-4 py-2 flex items-center justify-center hover:bg-[#FFEEA9] transition duration-200 my-2 sm:my-0 sm:ml-6" 
+            className="bg-[#FCE09B] text-black px-4 py-2 flex items-center justify-center hover:bg-[#FFEEA9] transition duration-200 my-2 sm:my-0 sm:ml-6 mr-10" 
             style={{ borderRadius: '30px', minWidth: '94px', minHeight: '43px' }}
           >
             <FiUser className="mr-1" /> Sign In
