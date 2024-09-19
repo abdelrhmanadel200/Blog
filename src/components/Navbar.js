@@ -11,13 +11,14 @@ const Navbar = () => {
 
   return (
     <header className="flex items-center justify-between bg-gradient-to-r from-teal-500 to-teal-700 shadow-md" style={{ height: '62.078px' }}>
-      <div>
-        <img src="images/c186678f7cd589c185fff8baa189e685.png" alt="Logo" className="ml-2 h-10" />
+      {/* Fixed width for logo to prevent shrinking */}
+      <div className="flex-shrink-0">
+        <img src="images/c186678f7cd589c185fff8baa189e685.png" alt="Logo" className="ml-2 h-10 w-10" />
       </div>
 
       {/* Hamburger Menu Button */}
       <button 
-        className="sm:hidden text-white"  // Changed from md:hidden to sm:hidden
+        className="sm:hidden text-white" 
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-expanded={mobileMenuOpen}
         aria-label="Toggle navigation"
@@ -36,9 +37,11 @@ const Navbar = () => {
         <Link href="/pricing" className="flex items-center text-white hover:text-gray-300 transition duration-200 mx-2 p-2" onClick={handleLinkClick}>
           <FiDollarSign className="mr-1" /> Pricing
         </Link>
+
+        {/* Move the Sign In button inside the mobile menu */}
         <Link href="/signin" className="flex items-center" onClick={handleLinkClick}>
           <span 
-            className="bg-[#FCE09B] text-black px-4 py-2 flex items-center justify-center hover:bg-[#FFEEA9] transition duration-200 mr-6" 
+            className="bg-[#FCE09B] text-black px-4 py-2 flex items-center justify-center hover:bg-[#FFEEA9] transition duration-200 my-2 sm:my-0 sm:ml-6" 
             style={{ borderRadius: '30px', minWidth: '94px', minHeight: '43px' }}
           >
             <FiUser className="mr-1" /> Sign In
