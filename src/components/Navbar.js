@@ -13,7 +13,7 @@ const Navbar = () => {
     <header className="flex items-center justify-between bg-gradient-to-r from-teal-500 to-teal-700 shadow-md" style={{ height: '62.078px' }}>
       {/* Ensure image does not shrink without changing its size */}
       <div className="flex-shrink-0">
-        <img src="images/c186678f7cd589c185fff8baa189e685.png" alt="Logo" className="ml-2 h-10" />
+        <img src="images/c186678f7cd589c185fff8baa189e685.png" alt="Logo" className="ml-10 h-10" />
       </div>
 
       {/* Hamburger Menu Button */}
