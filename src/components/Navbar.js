@@ -27,7 +27,7 @@ const Navbar = () => {
       </button>
 
       {/* Navigation Links */}
-      <nav className={`relative flex items-center ${mobileMenuOpen ? 'flex-col absolute top-16 left-0 w-full bg-gradient-to-r from-teal-500 to-teal-700 sm:static sm:flex-row' : 'hidden sm:flex'}`}>
+      <nav className={`relative flex items-center ml-10 ${mobileMenuOpen ? 'flex-col absolute top-16 left-0 w-full bg-gradient-to-r from-teal-500 to-teal-700 sm:static sm:flex-row' : 'hidden sm:flex'}`}>
         <Link href="/" className="flex items-center text-white hover:text-gray-200 transition duration-200 mx-2 p-2" onClick={handleLinkClick}>
           <FiHome className="mr-1" /> Home
         </Link>
