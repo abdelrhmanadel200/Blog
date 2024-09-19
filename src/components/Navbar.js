@@ -1,5 +1,5 @@
 import Link from 'next/link'; 
-import { useState } from 'react';
+import { useState } from 'react'; 
 import { FiHome, FiInfo, FiDollarSign, FiUser, FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
@@ -15,9 +15,9 @@ const Navbar = () => {
         <img src="images/c186678f7cd589c185fff8baa189e685.png" alt="Logo" className="ml-2 h-10" />
       </div>
 
-      
+      {/* Hamburger Menu Button */}
       <button 
-        className="md:hidden text-white" 
+        className="sm:hidden text-white"  // Changed from md:hidden to sm:hidden
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-expanded={mobileMenuOpen}
         aria-label="Toggle navigation"
@@ -25,8 +25,8 @@ const Navbar = () => {
         {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
       </button>
 
-      
-      <nav className={`relative flex items-center ${mobileMenuOpen ? 'flex-col absolute top-16 left-0 w-full bg-gradient-to-r from-teal-500 to-teal-700 md:static md:flex-row' : 'hidden md:flex'}`}>
+      {/* Navigation Links */}
+      <nav className={`relative flex items-center ${mobileMenuOpen ? 'flex-col absolute top-16 left-0 w-full bg-gradient-to-r from-teal-500 to-teal-700 sm:static sm:flex-row' : 'hidden sm:flex'}`}>
         <Link href="/" className="flex items-center text-white hover:text-gray-200 transition duration-200 mx-2 p-2" onClick={handleLinkClick}>
           <FiHome className="mr-1" /> Home
         </Link>
